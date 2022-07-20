@@ -6,69 +6,77 @@ public class Room implements IRoom {
     private Double price;
 
     //Single or Double bed room enum.
-    RoomType Single = RoomType.Single;
-    RoomType Double = RoomType.Double;
+    private RoomType roomType;
+
+
 
     //Default constructor
     public Room() {
 
     }
 
-    public Room(String roomNumber, Double price){
+
+    public Room(String roomNumber, Double price, RoomType roomType){
         this.roomNumber = roomNumber;
         this.price = price;
+        this.roomType = roomType;
+
+        /*if (roomType == RoomType.SINGLE){
+            System.out.println(RoomType.SINGLE);
+        } else {
+            System.out.println(RoomType.DOUBLE);
+        }*/
+
     }
+
 
     public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public java.lang.Double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(java.lang.Double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public RoomType getSingle() {
-        return Single;
-    }
-
-    public void setSingle(RoomType single) {
-        Single = single;
-    }
-
-    public RoomType getDouble() {
-        return Double;
-    }
-
-    public void setDouble(RoomType aDouble) {
-        Double = aDouble;
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 
     @Override
     public String toString() {
-        return "Room Number:" + getRoomNumber()+"Room Price"+ getRoomType() + "Room Type" + getRoomType() + "Open" + isFree();
+        return "Room Number: " + getRoomNumber()+" "+
+                "Room Price: " + getRoomPrice() +" "+
+                "Room Type: " + getRoomType() +" "+
+                "Open: " + isFree();
     }
 
     @Override
     public String getRoomNumber() {
-        return null;
+        return roomNumber;
     }
 
     @Override
-    public java.lang.Double getRoomPrice() {
-        return null;
+    public Double getRoomPrice() {
+
+        return price;
     }
 
     @Override
     public RoomType getRoomType() {
-        return null;
+        return roomType;
     }
 
     @Override
     public boolean isFree() {
-        return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+
     }
 }
