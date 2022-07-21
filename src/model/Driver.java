@@ -18,8 +18,7 @@ public class Driver {
         System.out.println(freeRoom);
 
         //Reservation tester
-        Date checkInDate = new Date();
-        Reservation reservation = new Reservation(customer,room1, checkInDate,);
+        Reservation reservation = new Reservation(customer,room1,new Date(),new Date());
         System.out.println(reservation);
     }
 }

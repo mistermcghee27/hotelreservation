@@ -5,6 +5,7 @@ import model.IRoom;
 import model.Room;
 import model.RoomType;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.Callable;
 
@@ -14,8 +15,8 @@ public class Reservation {
 
     private IRoom room;
 
-    private Date checkInDate = new Date();
-    private Date checkOutDate= new Date();
+    private Date checkInDate;
+    private Date checkOutDate;
 
     public Reservation() {
 
@@ -24,8 +25,8 @@ public class Reservation {
     public Reservation(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
         this.customer = customer;
         this.room = room;
-        checkInDate = new Date();
-        checkOutDate = new Date();
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
 
     }
 
