@@ -14,20 +14,20 @@ public class Reservation {
 
     private IRoom room;
 
-    private Date checkInDate;
-    private Date checkOutDate;
+    private Date checkInDate = new Date();
+    private Date checkOutDate= new Date();
 
-    private Reservation() {
+    public Reservation() {
 
     }
 
-   /* public model.Reservation(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
+    public Reservation(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
         this.customer = customer;
         this.room = room;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
+        checkInDate = new Date();
+        checkOutDate = new Date();
 
-    }*/
+    }
 
     public Customer getCustomer() {
         return customer;

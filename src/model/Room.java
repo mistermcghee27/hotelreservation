@@ -42,6 +42,10 @@ public class Room implements IRoom {
         this.price = price;
     }
 
+    public void getRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
+
     public void setRoomType(RoomType roomType) {
         this.roomType = roomType;
     }
