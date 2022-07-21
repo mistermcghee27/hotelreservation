@@ -30,4 +30,13 @@ public class CustomerService {
         return getAllCustomers();
     }
 
+    public static CustomerService getSingle_instance() {
+        return single_instance;
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

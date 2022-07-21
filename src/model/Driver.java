@@ -1,5 +1,7 @@
 package model;
 
+import service.CustomerService;
+
 import javax.print.attribute.standard.DateTimeAtProcessing;
 import java.util.Date;
 
@@ -20,5 +22,7 @@ public class Driver {
         //Reservation tester
         Reservation reservation = new Reservation(customer,room1,new Date(),new Date());
         System.out.println(reservation);
+
+
     }
 }

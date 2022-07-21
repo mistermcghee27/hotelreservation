@@ -4,9 +4,11 @@ package service;
 import model.Customer;
 import model.IRoom;
 import model.Reservation;
+import model.Room;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 
 public class  ReservationService{
 
@@ -23,6 +25,8 @@ public class  ReservationService{
         }
         return getInstance();
     }
+
+
 
     public void addRoom(IRoom room){
 
@@ -48,6 +52,11 @@ public class  ReservationService{
         System.out.println();
     }
 
+    Collection<Room> rooms = new HashSet<>();
+
+    Collection<Customer> customers = new HashSet<>();
+
+    Collection<Reservation> reservations = new HashSet<>();
 
 
 
