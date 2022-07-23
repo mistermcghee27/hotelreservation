@@ -23,6 +23,15 @@ public class Driver {
         Reservation reservation = new Reservation(customer,room1,new Date(),new Date());
         System.out.println(reservation);
 
+        //enum tester
+        RoomType numberOfBeds = RoomType.DOUBLE;
+        if (numberOfBeds == RoomType.DOUBLE) {
+            System.out.println("Yay two beds");
+        }
+
+        for (RoomType beds : RoomType.values()) {
+            System.out.println(beds);
+        }
 
     }
 }

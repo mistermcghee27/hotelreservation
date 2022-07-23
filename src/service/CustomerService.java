@@ -3,8 +3,11 @@ package service;
 import model.Customer;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CustomerService {
+
 
     // Static Variable reference of single_instance
     private static CustomerService single_instance = null;
@@ -19,20 +22,23 @@ public class CustomerService {
         }
         return getInstance();
     }
+    //Map for storing Customers
+    Map<String, Customer> customers = new HashMap<>();
 
-    public void addCustomer(String email, String firstName, String lastName){}
+    //method for adding customers to hashmap
+    public void addCustomer(String email, String firstName, String lastName){
+        customers.put(email,new Customer(firstName,lastName, email));
+    }
 
     public Customer getCustomer(String customerEmail){
-        return getCustomer(customerEmail);
+        return customers.get(customerEmail);
     }
 
     public Collection<Customer> getAllCustomers(){
-        return getAllCustomers();
+        return customers.values();
     }
 
-    public static CustomerService getSingle_instance() {
-        return single_instance;
-    }
+
 
 
     @Override

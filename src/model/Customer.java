@@ -6,9 +6,7 @@ import java.util.regex.Pattern;
 public class Customer {
 
     private String firstName;
-
     private String lastName;
-
     private String email;
 
     private final String emailRegex = "^(.+)@(.+).com$";
@@ -27,22 +25,6 @@ public class Customer {
         this.lastName = lastName;
         this.email = email;
 
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {

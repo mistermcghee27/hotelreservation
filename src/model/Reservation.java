@@ -2,12 +2,8 @@ package model;
 
 import model.Customer;
 import model.IRoom;
-import model.Room;
-import model.RoomType;
-
-import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.Callable;
+
 
 public class Reservation {
 
@@ -22,7 +18,7 @@ public class Reservation {
 
     }
 
-    public Reservation(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
+    public Reservation(final Customer customer, final IRoom room, final Date checkInDate, final Date checkOutDate) {
         this.customer = customer;
         this.room = room;
         this.checkInDate = checkInDate;

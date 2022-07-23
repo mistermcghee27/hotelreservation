@@ -1,12 +1,15 @@
 package model;
 
+import java.util.Date;
+import java.util.Objects;
+
 public class Room implements IRoom {
 
     private String roomNumber;
     private Double price;
 
-    //Single or Double bed room enum.
-    private RoomType roomType;
+    //Single or Double bedroom enum.
+    private RoomType numberOfBeds;
 
 
 
@@ -16,71 +19,79 @@ public class Room implements IRoom {
     }
 
 
-    public Room(String roomNumber, Double price, RoomType roomType){
+    public Room(String roomNumber, Double price, RoomType numberOfBeds) {
         this.roomNumber = roomNumber;
         this.price = price;
-        this.roomType = roomType;
-
-        /*if (roomType == RoomType.SINGLE){
-            System.out.println(RoomType.SINGLE);
-        } else {
-            System.out.println(RoomType.DOUBLE);
-        }*/
-
+        this.numberOfBeds = numberOfBeds;
     }
 
+    public String getRoomNumber(){
+        return this.roomNumber;
+    }
 
     public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public Double getPrice() {
+    public Double getRoomPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setRoomPrice(Double price) {
         this.price = price;
     }
 
-    public void getRoomType(RoomType roomType) {
-        this.roomType = roomType;
+    public RoomType getRoomType() {
+        return numberOfBeds;
     }
 
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
+    public void setRoomType(RoomType numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
     }
+
+    public boolean isFree(){
+        return this.price != null && this.price.equals(0.0);
+    }
+
+
 
     @Override
     public String toString() {
         return "Room Number: " + getRoomNumber()+" "+
                 "Room Price: " + getRoomPrice() +" "+
-                "Room Type: " + getRoomType() +" "+
-                "Open: " + isFree();
+                "Room Type: " + getRoomType();
+
     }
 
     @Override
-    public String getRoomNumber() {
-        return roomNumber;
+    public boolean equals(Object obj) {
+        // if this object is equal to its self return true.
+        if (this == obj) {
+            return true;
+        }
+        //next check to see if the parameter instance is null.
+        if (obj == null) {
+            return false;
+        }
+        //third make we have two instances from the same class
+        if (obj instanceof Room) {
+            //cast the instance to the class we're testing.
+            Room room = (Room) obj;
+            //check every attribute
+            if (room.roomNumber == this.roomNumber && room.price == this.price && room.numberOfBeds == numberOfBeds) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
-    public Double getRoomPrice() {
-
-        return price;
+    public int hashCode() {
+        return Objects.hash(roomNumber, price, numberOfBeds);
     }
 
-    @Override
-    public RoomType getRoomType() {
-        return roomType;
-    }
-
-    @Override
-    public boolean isFree() {
-        return true;
-    }
-
-    public static void main(String[] args) {
 
 
-    }
+
+
 }

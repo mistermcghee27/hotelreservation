@@ -41,10 +41,11 @@ public class  ReservationService{
     }
 
     public Collection<IRoom> findRooms(Date checkInDate, Date checkOutDate){
-            return findRooms(checkInDate, checkOutDate);
+        return new HashSet<>();
     }
 
     public Collection<Reservation> getCustomersReservation(Customer customer){
+
         return getCustomersReservation(customer);
     }
 
@@ -52,11 +53,7 @@ public class  ReservationService{
         System.out.println();
     }
 
-    Collection<Room> rooms = new HashSet<>();
 
-    Collection<Customer> customers = new HashSet<>();
-
-    Collection<Reservation> reservations = new HashSet<>();
 
 
 

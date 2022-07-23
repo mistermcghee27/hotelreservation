@@ -2,9 +2,10 @@ package model;
 
 
     public enum RoomType {
-        SINGLE,
-        DOUBLE;
+        SINGLE, DOUBLE
     }
+
+
 
 
 

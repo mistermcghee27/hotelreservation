@@ -8,19 +8,12 @@ public class FreeRoom extends Room {
     private Double price;
 
     //Single or Double bed room enum.
-    private RoomType roomType;
+    private RoomType numberOfBeds;
 
-
-    //Default constructor
-    public FreeRoom(){
-
-    }
 
 //Change the constructor to set the price to $0
-public FreeRoom(String roomNumber, RoomType roomType){
-    this.roomNumber = roomNumber;
-    price = 0.0;
-    this.roomType = roomType;
+public FreeRoom(String roomNumber, RoomType numberOfBeds){
+    super(roomNumber,0.0,numberOfBeds);
 
 }
 
@@ -38,23 +31,23 @@ public FreeRoom(String roomNumber, RoomType roomType){
     }
 
     @Override
-    public Double getPrice() {
+    public Double getRoomPrice() {
         return price;
     }
 
     @Override
-    public void setPrice(Double price) {
+    public void setRoomPrice(Double price) {
         this.price = price;
     }
 
     @Override
     public RoomType getRoomType() {
-        return roomType;
+        return numberOfBeds;
     }
 
     @Override
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
+    public void setRoomType(RoomType numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
     }
 
     @Override
@@ -62,18 +55,18 @@ public FreeRoom(String roomNumber, RoomType roomType){
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FreeRoom freeRoom = (FreeRoom) o;
-        return roomNumber.equals(freeRoom.roomNumber) && price.equals(freeRoom.price) && roomType == freeRoom.roomType;
+        return roomNumber.equals(freeRoom.roomNumber) && price.equals(freeRoom.price) && numberOfBeds == freeRoom.numberOfBeds;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roomNumber, price, roomType);
+        return Objects.hash(roomNumber, price, numberOfBeds);
     }
 
     @Override
     public String toString() {
         return "Room Number: "+ roomNumber+" "+
                 "Price: "+ price+" "+
-                "Room Type: "+ roomType;
+                "Room Type: "+ numberOfBeds;
     }
 }
