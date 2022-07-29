@@ -1,9 +1,8 @@
-package api;
+package com.udacity.gmscholarship.api;
 
-import model.Customer;
-import model.IRoom;
-import model.Reservation;
-import service.CustomerService;
+import com.udacity.gmscholarship.model.Customer;
+import com.udacity.gmscholarship.model.IRoom;
+import com.udacity.gmscholarship.model.Reservation;
 
 import java.util.Collection;
 import java.util.Date;

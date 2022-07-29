@@ -1,8 +1,5 @@
-package model;
+package com.udacity.gmscholarship.model;
 
-import service.CustomerService;
-
-import javax.print.attribute.standard.DateTimeAtProcessing;
 import java.util.Date;
 
 public class Driver {

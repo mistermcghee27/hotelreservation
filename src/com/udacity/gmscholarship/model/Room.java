@@ -1,6 +1,5 @@
-package model;
+package com.udacity.gmscholarship.model;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Room implements IRoom {

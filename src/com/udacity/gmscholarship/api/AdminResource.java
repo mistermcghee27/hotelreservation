@@ -1,10 +1,9 @@
-package api;
+package com.udacity.gmscholarship.api;
 
-import model.Customer;
-import model.IRoom;
+import com.udacity.gmscholarship.model.Customer;
+import com.udacity.gmscholarship.model.IRoom;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 public class AdminResource {

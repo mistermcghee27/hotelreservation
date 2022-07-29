@@ -1,6 +1,6 @@
-package service;
+package com.udacity.gmscholarship.service;
 
-import model.Customer;
+import com.udacity.gmscholarship.model.Customer;
 
 import java.util.Collection;
 import java.util.HashMap;

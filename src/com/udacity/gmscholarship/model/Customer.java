@@ -1,6 +1,5 @@
-package model;
+package com.udacity.gmscholarship.model;
 
-import java.util.concurrent.Callable;
 import java.util.regex.Pattern;
 
 public class Customer {
@@ -25,6 +24,22 @@ public class Customer {
         this.lastName = lastName;
         this.email = email;
 
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

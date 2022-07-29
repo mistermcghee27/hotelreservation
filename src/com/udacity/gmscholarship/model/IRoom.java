@@ -1,4 +1,4 @@
-package model;
+package com.udacity.gmscholarship.model;
 
 public interface IRoom {
 

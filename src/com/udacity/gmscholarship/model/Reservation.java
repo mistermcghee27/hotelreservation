@@ -1,7 +1,5 @@
-package model;
+package com.udacity.gmscholarship.model;
 
-import model.Customer;
-import model.IRoom;
 import java.util.Date;
 
 
