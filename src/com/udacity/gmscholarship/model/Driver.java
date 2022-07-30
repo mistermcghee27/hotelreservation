@@ -1,5 +1,8 @@
 package com.udacity.gmscholarship.model;
 
+import com.udacity.gmscholarship.api.AdminResource;
+import com.udacity.gmscholarship.service.ReservationService;
+
 import java.util.Date;
 
 public class Driver {
@@ -29,6 +32,8 @@ public class Driver {
         for (RoomType beds : RoomType.values()) {
             System.out.println(beds);
         }
+
+
 
     }
 }

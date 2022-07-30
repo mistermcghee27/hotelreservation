@@ -10,14 +10,6 @@ public class Room implements IRoom {
     //Single or Double bedroom enum.
     private RoomType numberOfBeds;
 
-
-
-    //Default constructor
-    public Room() {
-
-    }
-
-
     public Room(String roomNumber, Double price, RoomType numberOfBeds) {
         this.roomNumber = roomNumber;
         this.price = price;
@@ -49,7 +41,7 @@ public class Room implements IRoom {
     }
 
     public boolean isFree(){
-        return this.price != null && this.price.equals(0.0);
+        return true;
     }
 
 
@@ -73,13 +65,10 @@ public class Room implements IRoom {
             return false;
         }
         //third make we have two instances from the same class
-        if (obj instanceof Room) {
+        if (obj instanceof Room room) {
             //cast the instance to the class we're testing.
-            Room room = (Room) obj;
             //check every attribute
-            if (room.roomNumber == this.roomNumber && room.price == this.price && room.numberOfBeds == numberOfBeds) {
-                return true;
-            }
+            return Objects.equals(room.roomNumber, this.roomNumber) && Objects.equals(room.price, this.price) && room.numberOfBeds == numberOfBeds;
         }
         return false;
     }

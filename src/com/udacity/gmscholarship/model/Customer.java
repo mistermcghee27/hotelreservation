@@ -26,6 +26,7 @@ public class Customer {
 
     }
 
+    //note to self I might need to remove the getters and setters for this class!
     public String getFirstName() {
         return firstName;
     }

@@ -8,10 +8,11 @@ import java.util.Map;
 
 public class CustomerService {
 
-
     // Static Variable reference of single_instance
     private static CustomerService single_instance = null;
 
+    //Map for storing Customers
+    Map<String, Customer> customers = new HashMap<>();
     //private constructor restricting class to itself
     private CustomerService(){}
 
@@ -20,10 +21,9 @@ public class CustomerService {
         if (single_instance == null) {
             single_instance = new CustomerService();
         }
-        return getInstance();
+        return single_instance;
     }
-    //Map for storing Customers
-    Map<String, Customer> customers = new HashMap<>();
+
 
     //method for adding customers to hashmap
     public void addCustomer(String email, String firstName, String lastName){
