@@ -1,39 +1,40 @@
 package com.udacity.gmscholarship.model;
 
-import com.udacity.gmscholarship.api.AdminResource;
+import com.udacity.gmscholarship.service.CustomerService;
 import com.udacity.gmscholarship.service.ReservationService;
 
 import java.util.Date;
 
+import static com.udacity.gmscholarship.model.RoomType.SINGLE;
+
+
 public class Driver {
     public static void main(String[] args) {
-        //customer tester
-        Customer customer = new Customer("first", "second", "j@email.com");
-        System.out.println(customer);
 
-        //room tester
-        Room room1 = new Room("101", 150.00,RoomType.SINGLE);
-        System.out.println(room1);
+        //testing the Customer Service class
+        CustomerService customerService = CustomerService.getInstance();
 
-        //FreeRoom tester
-        FreeRoom freeRoom = new FreeRoom("100",RoomType.DOUBLE);
-        System.out.println(freeRoom);
+        customerService.addCustomer("ogmark@gmail.com", "Marcus","McGhee");
 
-        //Reservation tester
-        Reservation reservation = new Reservation(customer,room1,new Date(),new Date());
-        System.out.println(reservation);
+        customerService.getCustomer("ogmark@gmail.com");
 
-        //enum tester
-        RoomType numberOfBeds = RoomType.DOUBLE;
-        if (numberOfBeds == RoomType.DOUBLE) {
-            System.out.println("Yay two beds");
-        }
+        System.out.println(customerService.getAllCustomers());
 
-        for (RoomType beds : RoomType.values()) {
-            System.out.println(beds);
-        }
+        //testing adding a room
+        ReservationService reservationService = ReservationService.getInstance();
+
+        //testing reservation
+        Room room = new Room("101",150.00, SINGLE);
+
+       reservationService.reserveARoom(customerService.getCustomer("ogmark@gmail.com"),room,new Date(),new Date());
+
+
+        reservationService.printAllReservation();
+
 
 
 
     }
-}
+
+    }
+

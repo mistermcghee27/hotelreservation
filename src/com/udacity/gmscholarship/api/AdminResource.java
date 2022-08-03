@@ -32,9 +32,9 @@ public class AdminResource {
         }
 
 
-    public Collection<IRoom> getAllRooms(){
+    /*public Collection<IRoom> getAllRooms(){
         return reservationService.getAllRooms();
-    }
+    }*/
 
     public Collection<Customer> getAllCustomers(){
         return customerService.getAllCustomers();

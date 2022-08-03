@@ -9,12 +9,11 @@ import com.udacity.gmscholarship.service.ReservationService;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashSet;
 
 public class HotelResource {
-    private CustomerService customerService = CustomerService.getInstance();
+    private final CustomerService customerService = CustomerService.getInstance();
 
-    private ReservationService reservationService = ReservationService.getInstance();
+    private final ReservationService reservationService = ReservationService.getInstance();
     private static HotelResource single_instance = null;
 
     private HotelResource(){}
@@ -23,7 +22,7 @@ public class HotelResource {
         if (single_instance == null) {
             single_instance = new HotelResource();
         }
-        return getInstance();
+        return single_instance;
     }
 
     public Customer getCustomer(String email){
@@ -36,7 +35,7 @@ public class HotelResource {
     }
 
     public IRoom getRoom(String roomNumber){
-        return ReservationService.getInstance().getARoom(roomNumber);
+        return reservationService.getARoom(roomNumber);
     }
 
     public Reservation bookARoom(String customerEmail, IRoom room, Date checkInDate, Date checkOutDate){

@@ -4,6 +4,7 @@ import com.udacity.gmscholarship.model.Customer;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class CustomerService {
@@ -30,11 +31,13 @@ public class CustomerService {
         customers.put(email,new Customer(firstName,lastName, email));
     }
 
+    //returning the customers email.
     public Customer getCustomer(String customerEmail){
         return customers.get(customerEmail);
     }
 
-    public Collection<Customer> getAllCustomers(){
+
+    public Collection<Customer> getAllCustomers() {
         return customers.values();
     }
 
