@@ -1,6 +1,6 @@
 import com.udacity.gmscholarship.api.HotelResource;
 import com.udacity.gmscholarship.model.IRoom;
-import com.udacity.gmscholarship.service.ReservationService;
+import com.udacity.gmscholarship.model.Reservation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 
 public class MainMenu {
-    private static final ReservationService reservationService = ReservationService.getInstance();
     private static final HotelResource hotelResource = HotelResource.getInstance();
 
     public static void main(String[] args) {
@@ -24,6 +23,8 @@ public class MainMenu {
                     findAndReserveRoomARoom();
                 case 2:
                     getMyReservation();
+                case 3:
+                    createUserAccount();
             }
 
             choice = scanner.nextInt();
@@ -71,20 +72,51 @@ public class MainMenu {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter your email address");
             String customerEmail = scanner.nextLine();
-            reservationService.
 
+            seeReservations(hotelResource.getCustomersReservations(customerEmail));
         } catch (Exception ex){
             System.out.println("Invalid entry");
         }
     }
 
+    private static void seeReservations(Collection<Reservation> reservations) {
+        if (reservations == null){
+            System.out.println("No reservations.");
+        } else {
+            for (Reservation reservation: reservations) {
+                System.out.println(reservation +"\n");
+            }
+        }
+    }
+
+    private static void createUserAccount() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Email. (ex) TobiN@email.com");
+        String  userEmail = scanner.nextLine();
+
+        System.out.println("First Name:");
+        String userFirstName = scanner.nextLine();
+
+        System.out.println("Last Name:");
+        String userLastName = scanner.nextLine();
+
+        try {
+            hotelResource.createACustomer(userEmail, userFirstName, userLastName);
+            System.out.println("New user account created successfully.");
+        }catch (IllegalArgumentException ex) {
+            System.out.println(ex.getLocalizedMessage());
+            createUserAccount();
+        }
+    }
+
     public static void printMenu() {
-        System.out.println("Please choose an option: \n"
-        +       "1.) Find and reserve a room \n" +
-                "2.) See my reservations \n" +
-                "3.) Create an account \n" +
-                "4.) Admin menu \n" +
-                "5.) Exit Application");
+        System.out.println("""
+                Please choose an option:\s
+                1.) Find and reserve a room\s
+                2.) See my reservations\s
+                3.) Create an account\s
+                4.) Admin menu\s
+                5.) Exit Application""");
     }
 
 }
