@@ -89,7 +89,4 @@ public class  ReservationService {
         return reservationCollection;
     }
 
-    private String customerReservation(){
-
-    }
 }

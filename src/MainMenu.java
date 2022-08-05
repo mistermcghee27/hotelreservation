@@ -26,7 +26,7 @@ public class MainMenu {
                 case 3:
                     createUserAccount();
                 case 4:
-                    adminMenu();
+                    adminOptions();
                 case 5:
                     exit();
             }
@@ -113,8 +113,13 @@ public class MainMenu {
         }
     }
 
+    public static void adminOptions(){
+        AdminMenu.printAdminMenu();
+    }
+
     public static void exit(){
-        System.exit(5);
+        System.out.println("Thank you for using our service!");
+                System.exit(5);
     }
 
     public static void printMenu() {
