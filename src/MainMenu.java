@@ -25,6 +25,10 @@ public class MainMenu {
                     getMyReservation();
                 case 3:
                     createUserAccount();
+                case 4:
+                    adminMenu();
+                case 5:
+                    exit();
             }
 
             choice = scanner.nextInt();
@@ -107,6 +111,10 @@ public class MainMenu {
             System.out.println(ex.getLocalizedMessage());
             createUserAccount();
         }
+    }
+
+    public static void exit(){
+        System.exit(5);
     }
 
     public static void printMenu() {
