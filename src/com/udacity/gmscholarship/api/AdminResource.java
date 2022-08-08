@@ -2,6 +2,7 @@ package com.udacity.gmscholarship.api;
 
 import com.udacity.gmscholarship.model.Customer;
 import com.udacity.gmscholarship.model.IRoom;
+import com.udacity.gmscholarship.model.Reservation;
 import com.udacity.gmscholarship.service.CustomerService;
 import com.udacity.gmscholarship.service.ReservationService;
 
@@ -32,15 +33,17 @@ public class AdminResource {
         }
 
 
-    /*public Collection<IRoom> getAllRooms(){
+    public Collection<IRoom> getAllRooms(){
         return reservationService.getAllRooms();
-    }*/
+    }
 
     public Collection<Customer> getAllCustomers(){
         return customerService.getAllCustomers();
     }
 
-    public void displayAllReservations(){
-        reservationService.printAllReservation();
+    public Collection<Reservation> displayAllReservations(){
+        return reservationService.printAllReservation();
     }
+
+
 }

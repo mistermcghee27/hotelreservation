@@ -1,3 +1,4 @@
+import com.sun.jdi.connect.Connector;
 import com.udacity.gmscholarship.api.HotelResource;
 import com.udacity.gmscholarship.model.IRoom;
 import com.udacity.gmscholarship.model.Reservation;
@@ -12,30 +13,49 @@ import java.util.Scanner;
 public class MainMenu {
     private static final HotelResource hotelResource = HotelResource.getInstance();
 
-    public static void main(String[] args) {
+    public static void mainMenu() {
         Scanner scanner = new Scanner(System.in);
         int choice;
         printMenu();
         choice = scanner.nextInt();
-        while (choice != 5) {
-            switch (choice) {
-                case 1:
-                    findAndReserveRoomARoom();
-                case 2:
-                    getMyReservation();
-                case 3:
-                    createUserAccount();
-                case 4:
-                    adminOptions();
-                case 5:
-                    exit();
+        try {
+            while (choice != 5) {
+
+                switch (choice) {
+                    case 1:
+                        findAndReserveRoomARoom();
+                        break;
+                    case 2:
+                        getMyReservation();
+                        break;
+                    case 3:
+                        createUserAccount();
+                        break;
+                    case 4:
+                        AdminMenu.adminMenu();
+                        break;
+                    case 5:
+                        exit();
+                        break;
+                    case 6:
+                        if (choice > 10) {
+                            System.out.println("Please choose an option between 1 - 5");
+                        }
+                        break;
+
+
+                }
+                choice = scanner.nextInt();
+                printMenu();
+
             }
+            }catch(IllegalArgumentException ex){
 
-            choice = scanner.nextInt();
-            printMenu();
         }
-    }
 
+
+
+}
     private static void findAndReserveRoomARoom() {
         Scanner scanner = new Scanner(System.in);
 
@@ -113,23 +133,20 @@ public class MainMenu {
         }
     }
 
-    public static void adminOptions(){
-        AdminMenu.printAdminMenu();
-    }
-
     public static void exit(){
-        System.out.println("Thank you for using our service!");
                 System.exit(5);
     }
 
     public static void printMenu() {
         System.out.println("""
-                Please choose an option:\s
+                Please choose an option between 1 - 5:\s
                 1.) Find and reserve a room\s
                 2.) See my reservations\s
                 3.) Create an account\s
                 4.) Admin menu\s
-                5.) Exit Application""");
+                5.) Exit Application\s""");
     }
+
+
 
 }

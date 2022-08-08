@@ -4,10 +4,8 @@ package com.udacity.gmscholarship.service;
 import com.udacity.gmscholarship.model.Customer;
 import com.udacity.gmscholarship.model.IRoom;
 import com.udacity.gmscholarship.model.Reservation;
-import com.udacity.gmscholarship.model.Room;
 
 import java.util.*;
-import java.util.concurrent.Callable;
 
 public class  ReservationService {
 
@@ -67,7 +65,7 @@ public class  ReservationService {
         return reservations.get(customer.getEmail());
     }
 
-    public void printAllReservation() {
+    public Collection<Reservation> printAllReservation() {
         final Collection<Reservation> reservations = getAllReservations();
 
         if (reservations.isEmpty()) {
@@ -78,6 +76,7 @@ public class  ReservationService {
             }
         }
 
+        return reservations;
     }
 
     private Collection<Reservation> getAllReservations() {
@@ -87,6 +86,10 @@ public class  ReservationService {
             reservationCollection.addAll(reservations1);
         }
         return reservationCollection;
+    }
+
+    public Collection<IRoom> getAllRooms() {
+       return roomHashMap.values();
     }
 
 }
