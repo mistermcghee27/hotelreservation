@@ -31,7 +31,7 @@ public class AdminMenu {
                     seeAllReservations();
                     break;
                 case 4:
-
+                    addRoom();
                     break;
                 case 5:
                     MainMenu.mainMenu();
@@ -69,7 +69,7 @@ public class AdminMenu {
         double roomPrice = scanner.nextDouble();
 
         System.out.println("Enter Number of beds: SINGLE for 1 bed - DOUBLE for 2 beds");
-
+        RoomType.scanner.nextInt();
     }
 
     private static void seeAllReservations() {
@@ -79,9 +79,10 @@ public class AdminMenu {
         }
     }
 
-    public static void roomType(String numberOfBeds) {
-        switch (numberOfBeds)
+    private static void roomTypeSelector() {
+
     }
+
 
 
 
