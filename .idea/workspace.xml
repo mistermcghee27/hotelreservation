@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ae19c985-5825-4994-9e90-cbd85cb83136" name="Changes" comment="Working on AdminMenu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hotel reservation/com/udacity/gmscholarship/model/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hotel reservation/com/udacity/gmscholarship/model/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/hotel reservation/com/udacity/gmscholarship/model/RoomType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/hotel reservation/com/udacity/gmscholarship/model/RoomType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/udacity/gmscholarship/model/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/udacity/gmscholarship/model/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/udacity/gmscholarship/model/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/udacity/gmscholarship/model/RoomType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659922425520</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Working on AdminMenu.">
+      <created>1659951000603</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659951000603</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

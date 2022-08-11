@@ -4,8 +4,7 @@ import com.udacity.gmscholarship.model.*;
 import com.udacity.gmscholarship.service.CustomerService;
 import com.udacity.gmscholarship.service.ReservationService;
 
-import java.util.Collection;
-import java.util.Scanner;
+import java.util.*;
 
 public class AdminMenu {
     private static final ReservationService reservationService = ReservationService.getInstance();
@@ -31,7 +30,7 @@ public class AdminMenu {
                     seeAllReservations();
                     break;
                 case 4:
-                    addRoom();
+                    addRoomToList();
                     break;
                 case 5:
                     MainMenu.mainMenu();
@@ -59,17 +58,38 @@ public class AdminMenu {
         adminResource.getAllRooms();
     }
 
-    private static void addRoom() {
-        Scanner scanner = new Scanner(System.in);
+    private static void addRoomToList() {
+        Scanner addRoomScanner = new Scanner(System.in);
+        Scanner chooseNumberOfBeds = new Scanner(System.in);
+
+
 
         System.out.println("Enter new room number: ");
-        String roomNumber = scanner.nextLine();
+        String roomNumber = addRoomScanner.nextLine();
 
         System.out.println("Enter price per night: ");
-        double roomPrice = scanner.nextDouble();
+        double roomPrice = Double.parseDouble(addRoomScanner.nextLine());
 
-        System.out.println("Enter Number of beds: SINGLE for 1 bed - DOUBLE for 2 beds");
-        RoomType.scanner.nextInt();
+        System.out.println("Enter Number of beds: 1 for 1 bed - 2 for 2 beds");
+        RoomType roomType = chooseNumberOfBeds(chooseNumberOfBeds);
+
+        Room room = new Room(roomNumber, roomPrice, roomType);
+
+
+        adminResource.addRoom(Collections.singletonList(room));
+        System.out.println("New Room added successfully.");
+
+
+
+    }
+
+    private static RoomType chooseNumberOfBeds(Scanner bedChoiceScanner) {
+        try {
+            return RoomType.choiceOfBeds(bedChoiceScanner.nextLine());
+        } catch (IllegalArgumentException exception) {
+            System.out.println("Invalid Choice, Please choose 1 for one bed or 2 for two beds: ");
+            return chooseNumberOfBeds(bedChoiceScanner);
+        }
     }
 
     private static void seeAllReservations() {
@@ -79,9 +99,7 @@ public class AdminMenu {
         }
     }
 
-    private static void roomTypeSelector() {
 
-    }
 
 
 
